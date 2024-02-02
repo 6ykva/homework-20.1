@@ -22,7 +22,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='homework/', verbose_name='Фото', **NULLABLE)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
     # category = models.CharField(max_length=100, verbose_name='Категория')
-    price = models.IntegerField(verbose_name='Цена за штуку')
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена за штуку')
     date_of_creation = models.DateField(verbose_name='Дата создания')
     last_modified_date = models.DateField(verbose_name='Дата последнего изменения')
     
